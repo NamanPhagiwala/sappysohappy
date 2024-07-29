@@ -19,10 +19,10 @@ const LayoutProvider = (props: LayoutProviderProps) => {
   // }, [setUser]);
   return (
     <NextUIProvider>
-      <div className="flex bg-brand-bg">
+      <div className="flex py-10k h-min-screen">
         <div className="flex h-full flex-1 flex-col">
           <Header />
-          <div className="max-w-[100vw]">{children}</div>
+          <div className="max-w-[100vw] px-[10%] py-[3%]">{children}</div>
           <Footer />
         </div>
       </div>

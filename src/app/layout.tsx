@@ -17,10 +17,7 @@ export const metadata: Metadata = {
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <link
-        rel="shortcut icon"
-        href={withBasePath("/assets/images/favicon.png")}
-      />
+      <link rel="shortcut icon" href={withBasePath("/assets/images/favicon.png")} />
       <link rel="icon" href={withBasePath("/assets/images/favicon.png")} />
       <body className={`font-serif text-sm text-black`}>
         <ModalProvider />

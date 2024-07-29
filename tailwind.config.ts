@@ -2,11 +2,25 @@
 import { nextui } from "@nextui-org/react";
 
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          // ...
+          colors: {
+            primary: "#9dff20",
+            success: "#9dff2099",
+          },
+        },
+        dark: {
+          // ...
+          colors: {},
+        },
+        // ... custom themes
+      },
+    }),
   ],
-  plugins: [nextui()],
   theme: {
     extend: {
       fontFamily: {
@@ -15,7 +29,7 @@ module.exports = {
       },
       colors: {
         brand: {
-          primary: "#E4875D",
+          primary: "#9dff20",
           secondary: "#4A4A4A",
           whiteColor: "#ffffff",
           disabledBg: "#edf1f2",
@@ -25,7 +39,7 @@ module.exports = {
           red: "#C12C2C",
           green: "#2EC589",
           yellow: "#F0AC00",
-          gray: "#57647D",
+          gray: "#f6f6f6",
           dark: "#080E12",
           cyan: "#32B8B2",
           teal: "#088DB2",

@@ -8,51 +8,45 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { withBasePath } from "@/utils/helpers";
 import { useModalStore } from "@/store/modal";
+import { BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   const { openModal } = useModalStore();
   const history = useRouter();
 
   return (
-    <div className="flex flex-col justify-between bg-brand-black text-white md:grid md:grid-cols-2">
-      <div className="flex flex-col items-center justify-center gap-6 p-16 px-0 md:items-baseline md:p-16">
-        <Image
-          className="w-[212px] md:w-[312px]"
-          src={withBasePath("/assets/HFLogo.svg")}
-          alt="Brand Logo"
-          width={32}
-          height={32}
-          onClick={() => history.push("/")}
-        />
-        <p className="text-ellipsis px-5 text-lg md:p-0">Sample Text </p>
-        <Button
-          onClick={() => openModal("contactUs")}
-          variant="solid"
-          className="w-[50%] rounded-md bg-brand-primary text-sm text-white md:w-[25%]"
-        >
-          Drop a line
-        </Button>
+    <div className="flex flex-col items-center justify-center my-10 text-lg py-10 px-[10%] border-t-4 border-brand-primary border-opacity-60 gap-20 md:grid md:grid-cols-3">
+      <div className="">
+        Our goal is to democratize access to brilliant creative talent. This is why what we.ve brought into the world
+        first is the Erria Directory. To learn more about our future goals, visit our about page.
       </div>
-      <div className="ml-7 flex h-[331px] flex-col justify-around gap-6 rounded-tl-[130px] border border-b-0 border-r-0 border-brand-primary p-16 md:ml-0 md:mt-16 md:h-[377px] md:flex-row md:gap-32 md:p-16">
-        <div className="flex flex-col gap-4">
-          <div className="uppercase text-brand-primary">Contact</div>
-          <div className="text-base uppercase">Email</div>
-        </div>
-        <div className="flex flex-col gap-4">
-          <div className="uppercase text-brand-primary">Follow Us</div>
-          <div className="flex gap-2">
-            <Link href={""} target="_blank">
-              <IoLogoInstagram className="size-8 rounded-full border border-brand-primary p-1" />
-            </Link>
-            <Link href={""} target="_blank">
-              <FaFacebook className="size-8 rounded-full border border-brand-primary p-1" />
-            </Link>
-            <Link href={""} target="_blank">
-              <FaLinkedin className="size-8 rounded-full border border-brand-primary p-1" />
-            </Link>
-          </div>
-        </div>
-        <div className="text-[10px] text-[#ffffff80]">© Copyright-2024</div>
+      <div className="">
+        <strong>
+          <span className="underline">
+            <a href="http://www.erria.xyz/newsletter">Subscribe to our newsletter</a>
+          </span>{" "}
+        </strong>
+        for weekly updates.
+        <p className="gb-headline gb-headline-8c8766ac gb-headline-text">
+          To be added to the directory,{" "}
+          <span className="underline">
+            <a rel="noreferrer noopener" href="https://forms.gle/u99DagUCgazye6Yg7" target="_blank">
+              fill out this form.
+            </a>
+          </span>
+        </p>
+        <p className="gb-headline gb-headline-22d6bdbe gb-headline-text">
+          <strong>Current Directory Size:</strong> 1,403
+        </p>
+      </div>
+      <div className="flex gap-5 justify-self-end">
+        <Link href={"https://www.instagram.com/sappysohappy/"} target="_blank">
+          <BsInstagram />
+        </Link>
+        <Link href={"www.instagram.com"} target="_blank">
+          {" "}
+          <FaFacebook />{" "}
+        </Link>
       </div>
     </div>
   );
